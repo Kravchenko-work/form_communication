@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	<!-- import fonts -->
+	<link
+		href="https: //fonts.googleapis.com/css2? family = Nunito: ital, wght @ 0,200; 0,700; 0,900; 1,200; 1,400; 1,700 и display = swap "
+		rel=" stylesheet ">
+
+	<!-- import bootstrap -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+	<!-- import css -->
+	<link rel="stylesheet" href="style/nullstyle.css">
+	<link rel="stylesheet" href="style/style.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<?php if(isset($authorizationFailed)): ?>
+	<div class="alert alert-danger" role="alert">
+		Введён неправильный пароль
+	</div>
+	<?php endif; ?>
+
+
+	<form action="index.php?mode=admin_panel" method="post" id="form">
+		<div class="block">
+			<h1 class="block__title">Авторизация <span style="color: grey; font-size: 10px; display: block;">(P.s.
+					Переход на страницу с таблицей, хранящей все записи)</span></h1>
+			<div class="item">
+				<div class="item__blockTitle">
+					<label class="item__title">Email</label>
+				</div>
+				<div class="item__blockInput">
+					<input class="item__input required email" type="text" name="email">
+				</div>
+				<div class="error">Поле введено некорректно</div>
+			</div>
+			<div class="item">
+				<div class="item__blockTitle">
+					<label class="item__title">Пароль</label>
+				</div>
+				<div class="item__blockInput">
+					<input class="item__input required" type="password" name="password">
+				</div>
+				<div class="error">Поле обязательно к заполнению!</div>
+			</div>
+
+			<input class="btn btn-primary" type="submit" value="Авторизироваться">
+		</div>
+	</form>
+
+	<hr>
+
+
+
+	<!-- import js -->
+	<script src="/js/main.js"></script>
+</body>
+
+</html>
